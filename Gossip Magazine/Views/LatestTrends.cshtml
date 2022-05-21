@@ -1,0 +1,14 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.LatestTrends>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+	Layout = "Layout.cshtml";
+}
+
+<h1>@Model.Value("trendsTitle")</h1>
+<p>@Model.Value("trendsContent")</p>
+<img src="@Model.Image.Url()">
+
+@{
+var image = Model.Value<IPublishedContent>("image");
+}
